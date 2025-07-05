@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>UD. Ayudea - Toko Madu Murni, Telur Puyuh & Frozen Food Berkualitas</title>
     <meta name="description"
-        content="UD. Ayudea menyediakan madu murni asli, telur puyuh segar, dan produk frozen food berkualitas tinggi langsung dari petani lokal Indonesia.">
+        content="UD. Ayudea menyediakan madu murni asli, telur puyuh segar, dan produk singkong frozen langsung dari petani lokal Indonesia.">
     <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/2774/2774274.png" type="image/png">
 
     <!-- Tailwind CSS -->
@@ -44,7 +44,7 @@
         /* Fix untuk scroll horizontal */
         html,
         body {
-            overflow-x: hidden;
+            /* overflow-x: hidden; */
             max-width: 100%;
         }
 
@@ -71,6 +71,8 @@
         .mobile-menu.active {
             transform: translateX(0);
         }
+
+        /*  */
     </style>
 </head>
 
@@ -159,23 +161,37 @@
 
     <!-- Hero Section -->
     <section id="beranda" class="hero-gradient py-24 px-4 text-center relative overflow-hidden">
-        <div class="absolute inset-0 opacity-10"
-            style="background-image: url('https://www.transparenttextures.com/patterns/honey-im-subtle.png');"></div>
+        <!-- Subtle background image with strong blur and overlay -->
+        <div class="absolute inset-0">
+            <!-- Blurred background image -->
+            <img src="https://images.unsplash.com/photo-1606787366850-de6330128bfc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+                alt="Background madu, telur puyuh dan singkong"
+                class="w-full h-full object-cover filter blur-sm scale-110">
+            <!-- Color overlay adjusted for better text contrast -->
+            <div class="absolute inset-0 bg-gradient-to-br from-primary-900/70 via-primary-700/50 to-primary-600/30">
+            </div>
+            <!-- Honeycomb texture with adjusted opacity -->
+            <div class="absolute inset-0 opacity-10"
+                style="background-image: url('https://www.transparenttextures.com/patterns/honey-im-subtle.png');">
+            </div>
+        </div>
+
         <div class="container mx-auto relative z-10" data-aos="fade-up">
-            <h2 class="text-4xl md:text-5xl font-bold mb-6 text-primary-800 leading-tight">
-                Produk Alami Berkualitas <br> <span class="text-primary-600">Langsung dari Petani Lokal</span>
+            <h2 class="text-4xl md:text-5xl font-bold mb-6 text-white leading-tight">
+                Produk Alami Berkualitas <br>
+                <span class="text-primary-200">Langsung dari Petani Lokal</span>
             </h2>
-            <p class="text-xl md:text-2xl mb-8 text-primary-700 max-w-3xl mx-auto">
-                UD. Ayudea menghadirkan madu murni, telur puyuh segar, dan produk frozen food berkualitas tinggi dengan
+            <p class="text-xl md:text-2xl mb-8 text-primary-100 max-w-3xl mx-auto">
+                UD. Ayudea menghadirkan madu murni, telur puyuh segar, dan produk singkong frozen dengan
                 harga terjangkau.
             </p>
             <div class="flex flex-col sm:flex-row justify-center gap-4">
                 <a href="#produk"
-                    class="bg-primary-600 hover:bg-primary-700 text-white px-8 py-4 rounded-lg transition font-semibold shadow-lg flex items-center justify-center">
+                    class="bg-primary-500 hover:bg-primary-400 text-white px-8 py-4 rounded-lg transition font-semibold shadow-lg flex items-center justify-center">
                     <i class="fas fa-shopping-basket mr-2"></i> Lihat Produk
                 </a>
                 <a href="#kontak"
-                    class="bg-white hover:bg-gray-100 text-primary-700 px-8 py-4 rounded-lg transition font-semibold shadow-lg flex items-center justify-center">
+                    class="bg-white hover:bg-gray-50 text-primary-700 px-8 py-4 rounded-lg transition font-semibold shadow-lg flex items-center justify-center">
                     <i class="fas fa-phone-alt mr-2"></i> Pesan Sekarang
                 </a>
             </div>
@@ -183,7 +199,7 @@
     </section>
 
     <!-- Tentang Kami -->
-    <section id="tentang" class="py-20 px-4 bg-white">
+    <section id="tentang" class="py-20 px-4 bg-white overflow-hidden">
         <div class="container mx-auto">
             <div class="flex flex-col md:flex-row items-center gap-12">
                 <div class="md:w-1/2" data-aos="fade-right">
@@ -233,7 +249,7 @@
     </section>
 
     <!-- Produk Section -->
-    <section id="produk" class="py-20 px-4 bg-primary-50">
+    <section id="produk" class="py-20 px-4 bg-primary-50 overflow-hidden">
         <div class="container mx-auto">
             <div class="text-center mb-16" data-aos="fade-up">
                 <h3 class="text-3xl font-bold text-primary-800 mb-4">Produk Unggulan Kami</h3>
@@ -333,7 +349,7 @@
     </section>
 
     <!-- Keunggulan -->
-    <section class="py-20 px-4 bg-white">
+    <section class="py-20 px-4 bg-white overflow-hidden">
         <div class="container mx-auto">
             <div class="text-center mb-16" data-aos="fade-up">
                 <h3 class="text-3xl font-bold text-primary-800 mb-4">Mengapa Memilih Kami?</h3>
@@ -375,7 +391,7 @@
     </section>
 
     <!-- FAQ -->
-    <section class="py-20 px-4 bg-white">
+    <section class="py-20 px-4 bg-white overflow-hidden">
         <div class="container mx-auto max-w-4xl">
             <div class="text-center mb-16" data-aos="fade-up">
                 <h3 class="text-3xl font-bold text-primary-800 mb-4">Pertanyaan Umum</h3>
@@ -438,7 +454,7 @@
     </section>
 
     <!-- CTA -->
-    <section class="py-16 px-4 bg-primary-600 text-white">
+    <section class="py-16 px-4 bg-primary-600 text-white overflow-hidden">
         <div class="container mx-auto text-center">
             <h3 class="text-3xl font-bold mb-6" data-aos="fade-up">Siap Mencoba Produk Kami?</h3>
             <p class="text-xl mb-8 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">
@@ -458,7 +474,7 @@
     </section>
 
     <!-- Kontak -->
-    <section id="kontak" class="py-20 px-4 bg-white">
+    <section id="kontak" class="py-20 px-4 bg-white overflow-hidden">
         <div class="container mx-auto">
             <div class="flex flex-col md:flex-row gap-12">
                 <div class="md:w-1/2" data-aos="fade-right">
@@ -605,7 +621,7 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-primary-800 text-white py-12 px-4">
+    <footer class="bg-primary-800 text-white py-12 px-4 overflow-hidden">
         <div class="container mx-auto">
             <div class="grid md:grid-cols-3 gap-8 mb-8">
                 <div>
