@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UD. Ayudea - Toko Madu Murni, Telur Puyuh & Frozen Food Berkualitas</title>
+    <meta name="description"
+        content="UD. Ayudea menyediakan madu murni asli, telur puyuh segar, dan produk frozen food berkualitas tinggi langsung dari petani lokal Indonesia.">
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/2774/2774274.png" type="image/png">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#FFFBEB',
+                            100: '#FEF3C7',
+                            200: '#FDE68A',
+                            300: '#FCD34D',
+                            400: '#FBBF24',
+                            500: '#F59E0B',
+                            600: '#D97706',
+                            700: '#B45309',
+                            800: '#92400E',
+                            900: '#78350F',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+    <style>
+        /* Fix untuk scroll horizontal */
+        html,
+        body {
+            overflow-x: hidden;
+            max-width: 100%;
+        }
+
+        .hero-gradient {
+            background: linear-gradient(135deg, rgba(254, 243, 199, 1) 0%, rgba(251, 191, 36, 0.8) 100%);
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        .testimonial-card {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+        }
+
+        /* Mobile menu styles */
+        .mobile-menu {
+            transform: translateX(100%);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .mobile-menu.active {
+            transform: translateX(0);
+        }
+    </style>
+</head>
+
+<body class="bg-primary-50 text-gray-800 font-sans antialiased">
+    <!-- Navbar -->
+    <header class="sticky top-0 z-50 bg-white shadow-md">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <img src="https://cdn-icons-png.flaticon.com/512/2774/2774274.png" alt="Logo UD. Ayudea"
+                    class="h-10 w-10">
+                <h1 class="text-2xl font-bold text-primary-700">
+                    <span class="text-primary-600">UD.</span><span class="text-primary-800">Ayudea</span>
+                </h1>
+            </div>
+
+            <nav class="hidden md:flex space-x-8">
+                <a href="#beranda"
+                    class="text-primary-800 font-medium hover:text-primary-600 transition flex items-center">
+                    <i class="fas fa-home mr-2"></i> Beranda
+                </a>
+                <a href="#produk"
+                    class="text-primary-800 font-medium hover:text-primary-600 transition flex items-center">
+                    <i class="fas fa-shopping-basket mr-2"></i> Produk
+                </a>
+                <a href="#tentang"
+                    class="text-primary-800 font-medium hover:text-primary-600 transition flex items-center">
+                    <i class="fas fa-info-circle mr-2"></i> Tentang Kami
+                </a>
+                <a href="#testimoni"
+                    class="text-primary-800 font-medium hover:text-primary-600 transition flex items-center">
+                    <i class="fas fa-star mr-2"></i> Testimoni
+                </a>
+                <a href="#kontak"
+                    class="text-primary-800 font-medium hover:text-primary-600 transition flex items-center">
+                    <i class="fas fa-phone-alt mr-2"></i> Kontak
+                </a>
+            </nav>
+
+            <button id="mobile-menu-button" class="md:hidden text-primary-700">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="mobile-menu fixed inset-0 bg-white z-50 p-6 pt-20 md:hidden">
+            <button id="close-menu" class="absolute top-4 right-4 text-2xl text-primary-700">
+                <i class="fas fa-times"></i>
+            </button>
+            <nav class="flex flex-col space-y-6">
+                <a href="#beranda"
+                    class="text-primary-800 text-xl font-medium hover:text-primary-600 transition flex items-center">
+                    <i class="fas fa-home mr-4"></i> Beranda
+                </a>
+                <a href="#produk"
+                    class="text-primary-800 text-xl font-medium hover:text-primary-600 transition flex items-center">
+                    <i class="fas fa-shopping-basket mr-4"></i> Produk
+                </a>
+                <a href="#tentang"
+                    class="text-primary-800 text-xl font-medium hover:text-primary-600 transition flex items-center">
+                    <i class="fas fa-info-circle mr-4"></i> Tentang Kami
+                </a>
+                <a href="#testimoni"
+                    class="text-primary-800 text-xl font-medium hover:text-primary-600 transition flex items-center">
+                    <i class="fas fa-star mr-4"></i> Testimoni
+                </a>
+                <a href="#kontak"
+                    class="text-primary-800 text-xl font-medium hover:text-primary-600 transition flex items-center">
+                    <i class="fas fa-phone-alt mr-4"></i> Kontak
+                </a>
+            </nav>
+            <div class="mt-8 pt-8 border-t border-primary-100">
+                <div class="flex space-x-4 justify-center">
+                    <a href="#" class="text-primary-700 hover:text-primary-600 text-2xl">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="text-primary-700 hover:text-primary-600 text-2xl">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" class="text-primary-700 hover:text-primary-600 text-2xl">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="beranda" class="hero-gradient py-24 px-4 text-center relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10"
+            style="background-image: url('https://www.transparenttextures.com/patterns/honey-im-subtle.png');"></div>
+        <div class="container mx-auto relative z-10" data-aos="fade-up">
+            <h2 class="text-4xl md:text-5xl font-bold mb-6 text-primary-800 leading-tight">
+                Produk Alami Berkualitas <br> <span class="text-primary-600">Langsung dari Petani Lokal</span>
+            </h2>
+            <p class="text-xl md:text-2xl mb-8 text-primary-700 max-w-3xl mx-auto">
+                UD. Ayudea menghadirkan madu murni, telur puyuh segar, dan produk frozen food berkualitas tinggi dengan
+                harga terjangkau.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#produk"
+                    class="bg-primary-600 hover:bg-primary-700 text-white px-8 py-4 rounded-lg transition font-semibold shadow-lg flex items-center justify-center">
+                    <i class="fas fa-shopping-basket mr-2"></i> Lihat Produk
+                </a>
+                <a href="#kontak"
+                    class="bg-white hover:bg-gray-100 text-primary-700 px-8 py-4 rounded-lg transition font-semibold shadow-lg flex items-center justify-center">
+                    <i class="fas fa-phone-alt mr-2"></i> Pesan Sekarang
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tentang Kami -->
+    <section id="tentang" class="py-20 px-4 bg-white">
+        <div class="container mx-auto">
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="md:w-1/2" data-aos="fade-right">
+                    <img src="https://images.unsplash.com/photo-1587049352851-8d4e89133924?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1287&q=80"
+                        alt="Tentang UD. Ayudea" class="rounded-xl shadow-2xl w-full h-auto object-cover">
+                </div>
+                <div class="md:w-1/2" data-aos="fade-left">
+                    <h3 class="text-3xl font-bold text-primary-800 mb-6">Tentang UD. Ayudea</h3>
+                    <p class="text-lg text-gray-600 mb-4">
+                        UD. Ayudea adalah usaha keluarga yang berkomitmen menyediakan produk-produk alami berkualitas
+                        tinggi langsung dari petani lokal Indonesia. Berdiri sejak 2015, kami telah melayani ribuan
+                        pelanggan dengan produk-produk terbaik.
+                    </p>
+                    <p class="text-lg text-gray-600 mb-6">
+                        Kami percaya pada kualitas, keaslian, dan manfaat kesehatan dari produk alami. Setiap produk
+                        yang kami jual melalui proses seleksi ketat untuk memastikan hanya yang terbaik sampai ke tangan
+                        konsumen.
+                    </p>
+                    <div class="flex flex-col items-center">
+                        <div class="grid grid-cols-2 gap-4 max-w-md">
+                            <div class="bg-primary-50 p-4 rounded-lg">
+                                <div class="text-primary-600 text-2xl mb-2">
+                                    <i class="fas fa-check-circle"></i>
+                                </div>
+                                <h4 class="font-bold text-primary-800">100% Alami</h4>
+                                <p class="text-sm text-gray-600">Tanpa bahan pengawet kimia</p>
+                            </div>
+                            <div class="bg-primary-50 p-4 rounded-lg">
+                                <div class="text-primary-600 text-2xl mb-2">
+                                    <i class="fas fa-leaf"></i>
+                                </div>
+                                <h4 class="font-bold text-primary-800">Organik</h4>
+                                <p class="text-sm text-gray-600">Dari petani terpercaya</p>
+                            </div>
+                        </div>
+                        <div class="bg-primary-50 p-4 rounded-lg mt-4 max-w-xs w-full">
+                            <div class="text-primary-600 text-2xl mb-2">
+                                <i class="fas fa-medal"></i>
+                            </div>
+                            <h4 class="font-bold text-primary-800">Berkualitas</h4>
+                            <p class="text-sm text-gray-600">Standar tinggi</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Produk Section -->
+    <section id="produk" class="py-20 px-4 bg-primary-50">
+        <div class="container mx-auto">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h3 class="text-3xl font-bold text-primary-800 mb-4">Produk Unggulan Kami</h3>
+                <p class="text-xl text-primary-700 max-w-2xl mx-auto">
+                    Berbagai produk alami berkualitas dengan manfaat luar biasa untuk kesehatan keluarga Anda
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Madu -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg product-card transition duration-300"
+                    data-aos="fade-up" data-aos-delay="100">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://asset.kompas.com/crops/f5XwpgIKRNExB6juRxt4z6Ce2Ug=/0x8:1000x675/1200x800/data/photo/2020/11/12/5facc84db5083.jpg"
+                            alt="Madu Murni UD. Ayudea" class="w-full h-full object-cover">
+                        <div
+                            class="absolute top-4 right-4 bg-primary-600 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                            Best Seller
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h4 class="text-xl font-bold text-primary-800">Madu Murni Asli</h4>
+                            <span class="bg-primary-100 text-primary-800 px-2 py-1 rounded text-sm font-semibold">Rp
+                                85.000</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">
+                            Madu alami langsung dari peternak lebah di hutan Sumatera. Dipanen secara tradisional tanpa
+                            proses pemanasan untuk menjaga enzim dan nutrisi alami.
+                        </p>
+                        <div class="flex justify-between">
+                            <a href="#kontak"
+                                class="bg-primary-600 hover:bg-primary-700 text-white px-4 py-2 rounded-lg transition text-sm font-semibold flex items-center">
+                                <i class="fas fa-shopping-cart mr-2"></i> Pesan
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Telur Puyuh -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg product-card transition duration-300"
+                    data-aos="fade-up" data-aos-delay="200">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1587486913049-53fc88980cfc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1287&q=80"
+                            alt="Telur Puyuh Segar" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h4 class="text-xl font-bold text-primary-800">Telur Puyuh Segar</h4>
+                            <span class="bg-primary-100 text-primary-800 px-2 py-1 rounded text-sm font-semibold">Rp
+                                25.000/10 butir</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">
+                            Telur puyuh organik dari peternakan lokal. Kaya protein, vitamin B12, dan mineral penting.
+                            Cocok untuk MPASI anak dan menu sehat keluarga.
+                        </p>
+                        <div class="flex justify-between">
+                            <a href="#kontak"
+                                class="bg-primary-600 hover:bg-primary-700 text-white px-4 py-2 rounded-lg transition text-sm font-semibold flex items-center">
+                                <i class="fas fa-shopping-cart mr-2"></i> Pesan
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Singkong Frozen -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg product-card transition duration-300"
+                    data-aos="fade-up" data-aos-delay="300">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1601050690597-df0568f70950?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1287&q=80"
+                            alt="Singkong Frozen Premium" class="w-full h-full object-cover">
+                        <div
+                            class="absolute top-4 right-4 bg-green-600 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                            New
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h4 class="text-xl font-bold text-primary-800">Singkong Frozen Premium</h4>
+                            <span class="bg-primary-100 text-primary-800 px-2 py-1 rounded text-sm font-semibold">Rp
+                                35.000/500g</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">
+                            Singkong pilihan dengan proses pembekuan cepat untuk menjaga kesegaran. Praktis, siap olah
+                            untuk berbagai menu camilan lezat dan sehat.
+                        </p>
+                        <div class="flex justify-between">
+                            <a href="#kontak"
+                                class="bg-primary-600 hover:bg-primary-700 text-white px-4 py-2 rounded-lg transition text-sm font-semibold flex items-center">
+                                <i class="fas fa-shopping-cart mr-2"></i> Pesan
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Keunggulan -->
+    <section class="py-20 px-4 bg-white">
+        <div class="container mx-auto">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h3 class="text-3xl font-bold text-primary-800 mb-4">Mengapa Memilih Kami?</h3>
+                <p class="text-xl text-primary-700 max-w-2xl mx-auto">
+                    Keunggulan yang membuat UD. Ayudea berbeda dari yang lain
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="text-center p-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="bg-primary-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-award text-3xl text-primary-600"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-primary-800 mb-2">Kualitas Terjamin</h4>
+                    <p class="text-gray-600">
+                        Produk melalui seleksi ketat dengan standar kualitas tinggi sebelum sampai ke pelanggan
+                    </p>
+                </div>
+                <div class="text-center p-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="bg-primary-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-hand-holding-heart text-3xl text-primary-600"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-primary-800 mb-2">Harga Terjangkau</h4>
+                    <p class="text-gray-600">
+                        Harga langsung dari petani tanpa perantara, lebih hemat untuk Anda
+                    </p>
+                </div>
+                <div class="text-center p-6" data-aos="fade-up" data-aos-delay="400">
+                    <div class="bg-primary-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-headset text-3xl text-primary-600"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-primary-800 mb-2">Layanan Ramah</h4>
+                    <p class="text-gray-600">
+                        Customer service siap membantu 7 hari seminggu dengan respon cepat
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-20 px-4 bg-white">
+        <div class="container mx-auto max-w-4xl">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h3 class="text-3xl font-bold text-primary-800 mb-4">Pertanyaan Umum</h3>
+                <p class="text-xl text-primary-700">
+                    Temukan jawaban untuk pertanyaan yang sering diajukan
+                </p>
+            </div>
+
+            <div class="space-y-4">
+                <div class="border border-primary-100 rounded-lg overflow-hidden" data-aos="fade-up">
+                    <button
+                        class="w-full flex justify-between items-center p-4 bg-primary-50 text-primary-800 font-semibold">
+                        <span>Bagaimana cara memastikan madu yang dijual benar-benar murni?</span>
+                        <i class="fas fa-chevron-down transition-transform duration-300"></i>
+                    </button>
+                    <div class="p-4 bg-white hidden">
+                        <p class="text-gray-600">
+                            Madu kami diuji dengan beberapa metode tradisional dan modern. Anda bisa melakukan tes
+                            sederhana di rumah:
+                            1) Tuang madu ke air - madu asli akan mengendap di dasar
+                            2) Teteskan di kertas - tidak mudah menyerap
+                            3) Panaskan sendok madu - madu asli tidak akan menggelembung berlebihan
+                            Kami juga menyediakan sertifikat analisis untuk setiap batch produksi.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="border border-primary-100 rounded-lg overflow-hidden" data-aos="fade-up">
+                    <button
+                        class="w-full flex justify-between items-center p-4 bg-primary-50 text-primary-800 font-semibold">
+                        <span>Berapa lama telur puyuh bisa bertahan?</span>
+                        <i class="fas fa-chevron-down transition-transform duration-300"></i>
+                    </button>
+                    <div class="p-4 bg-white hidden">
+                        <p class="text-gray-600">
+                            Telur puyuh segar dari kami bisa bertahan hingga 3 minggu jika disimpan di kulkas dengan
+                            suhu 4°C. Untuk kualitas terbaik, kami sarankan dikonsumsi dalam 2 minggu. Telur kami
+                            dikirim dalam kemasan khusus yang menjaga kesegaran selama pengiriman.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="border border-primary-100 rounded-lg overflow-hidden" data-aos="fade-up">
+                    <button
+                        class="w-full flex justify-between items-center p-4 bg-primary-50 text-primary-800 font-semibold">
+                        <span>Apakah singkong frozen bisa langsung digoreng?</span>
+                        <i class="fas fa-chevron-down transition-transform duration-300"></i>
+                    </button>
+                    <div class="p-4 bg-white hidden">
+                        <p class="text-gray-600">
+                            Ya, singkong frozen kami sudah melalui proses blanching sehingga bisa langsung digoreng
+                            tanpa perlu direbus terlebih dahulu. Namun untuk hasil terbaik, kami sarankan untuk
+                            mencairkan terlebih dahulu di kulkas selama 2-3 jam sebelum digoreng. Singkong juga bisa
+                            dikukus atau dipanggang sesuai selera.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-16 px-4 bg-primary-600 text-white">
+        <div class="container mx-auto text-center">
+            <h3 class="text-3xl font-bold mb-6" data-aos="fade-up">Siap Mencoba Produk Kami?</h3>
+            <p class="text-xl mb-8 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">
+                Pesan sekarang dan dapatkan promo khusus untuk pembelian pertama!
+            </p>
+            <div data-aos="fade-up" data-aos-delay="200">
+                <a href="#kontak"
+                    class="inline-block bg-white hover:bg-gray-100 text-primary-700 px-8 py-4 rounded-lg transition font-semibold shadow-lg mx-2 mb-3">
+                    <i class="fas fa-phone-alt mr-2"></i> Hubungi Kami
+                </a>
+                <a href="https://wa.me/6281234567890"
+                    class="inline-block bg-green-500 hover:bg-green-600 text-white px-8 py-4 rounded-lg transition font-semibold shadow-lg mx-2 mb-3">
+                    <i class="fab fa-whatsapp mr-2"></i> Chat WhatsApp
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Kontak -->
+    <section id="kontak" class="py-20 px-4 bg-white">
+        <div class="container mx-auto">
+            <div class="flex flex-col md:flex-row gap-12">
+                <div class="md:w-1/2" data-aos="fade-right">
+                    <h3 class="text-3xl font-bold text-primary-800 mb-6">Hubungi Kami</h3>
+                    <p class="text-lg text-gray-600 mb-8">
+                        Silakan hubungi kami melalui salah satu cara di bawah ini. Tim customer service kami siap
+                        membantu Anda dari Senin-Minggu pukul 08.00-21.00 WIB.
+                    </p>
+
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="bg-primary-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-map-marker-alt text-primary-600 text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-primary-800 mb-1">Alamat</h4>
+                                <p class="text-gray-600">
+                                    Jl. Raya Bogor Km. 30 No. 15<br>
+                                    Cimanggis, Depok<br>
+                                    Jawa Barat 16452
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <div class="bg-primary-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-phone-alt text-primary-600 text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-primary-800 mb-1">Telepon/WhatsApp</h4>
+                                <p class="text-gray-600">
+                                    <a href="tel:+6281234567890"
+                                        class="hover:text-primary-600 transition">0812-3456-7890</a> (Customer
+                                    Service)<br>
+                                    <a href="tel:+6289876543210"
+                                        class="hover:text-primary-600 transition">0898-7654-3210</a> (Admin)
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <div class="bg-primary-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-envelope text-primary-600 text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-primary-800 mb-1">Email</h4>
+                                <p class="text-gray-600">
+                                    <a href="mailto:cs@ayudea.com"
+                                        class="hover:text-primary-600 transition">cs@ayudea.com</a><br>
+                                    <a href="mailto:order@ayudea.com"
+                                        class="hover:text-primary-600 transition">order@ayudea.com</a>
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <div class="bg-primary-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-clock text-primary-600 text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-primary-800 mb-1">Jam Operasional</h4>
+                                <p class="text-gray-600">
+                                    Senin - Minggu: 08.00 - 21.00 WIB<br>
+                                    (Pengiriman: Senin - Sabtu)
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-8">
+                        <h4 class="font-bold text-primary-800 mb-4">Follow Kami</h4>
+                        <div class="flex space-x-4">
+                            <a href="#"
+                                class="bg-primary-100 hover:bg-primary-200 text-primary-700 w-10 h-10 rounded-full flex items-center justify-center transition">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#"
+                                class="bg-primary-100 hover:bg-primary-200 text-primary-700 w-10 h-10 rounded-full flex items-center justify-center transition">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#"
+                                class="bg-primary-100 hover:bg-primary-200 text-primary-700 w-10 h-10 rounded-full flex items-center justify-center transition">
+                                <i class="fab fa-tiktok"></i>
+                            </a>
+                            <a href="#"
+                                class="bg-primary-100 hover:bg-primary-200 text-primary-700 w-10 h-10 rounded-full flex items-center justify-center transition">
+                                <i class="fab fa-youtube"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="md:w-1/2" data-aos="fade-left">
+                    <div class="bg-primary-50 p-8 rounded-xl shadow-md">
+                        <h4 class="text-2xl font-bold text-primary-800 mb-6">Formulir Kontak</h4>
+                        <form>
+                            <div class="mb-4">
+                                <label for="name" class="block text-primary-800 font-medium mb-2">Nama Lengkap</label>
+                                <input type="text" id="name"
+                                    class="w-full px-4 py-2 rounded-lg border border-primary-200 focus:outline-none focus:ring-2 focus:ring-primary-500">
+                            </div>
+                            <div class="mb-4">
+                                <label for="email" class="block text-primary-800 font-medium mb-2">Email</label>
+                                <input type="email" id="email"
+                                    class="w-full px-4 py-2 rounded-lg border border-primary-200 focus:outline-none focus:ring-2 focus:ring-primary-500">
+                            </div>
+                            <div class="mb-4">
+                                <label for="phone" class="block text-primary-800 font-medium mb-2">Nomor Telepon</label>
+                                <input type="tel" id="phone"
+                                    class="w-full px-4 py-2 rounded-lg border border-primary-200 focus:outline-none focus:ring-2 focus:ring-primary-500">
+                            </div>
+                            <div class="mb-4">
+                                <label for="subject" class="block text-primary-800 font-medium mb-2">Subjek</label>
+                                <select id="subject"
+                                    class="w-full px-4 py-2 rounded-lg border border-primary-200 focus:outline-none focus:ring-2 focus:ring-primary-500">
+                                    <option value="">Pilih subjek...</option>
+                                    <option value="order">Pertanyaan tentang pemesanan</option>
+                                    <option value="product">Pertanyaan tentang produk</option>
+                                    <option value="delivery">Pertanyaan tentang pengiriman</option>
+                                    <option value="other">Lainnya</option>
+                                </select>
+                            </div>
+                            <div class="mb-6">
+                                <label for="message" class="block text-primary-800 font-medium mb-2">Pesan</label>
+                                <textarea id="message" rows="4"
+                                    class="w-full px-4 py-2 rounded-lg border border-primary-200 focus:outline-none focus:ring-2 focus:ring-primary-500"></textarea>
+                            </div>
+                            <button type="submit"
+                                class="w-full bg-primary-600 hover:bg-primary-700 text-white px-6 py-3 rounded-lg transition font-semibold">
+                                Kirim Pesan
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Peta -->
+    <section class="h-96 bg-gray-100">
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31859.55724381976!2d99.09884349999999!3d3.48393205!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30315bd855ead545%3A0xb727ef7fa047c9fd!2sCempedak%20Lobang%2C%20Kec.%20Sei%20Rampah%2C%20Kabupaten%20Serdang%20Bedagai%2C%20Sumatera%20Utara!5e0!3m2!1sid!2sid!4v1751729381424!5m2!1sid!2sid"
+            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-primary-800 text-white py-12 px-4">
+        <div class="container mx-auto">
+            <div class="grid md:grid-cols-3 gap-8 mb-8">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <img src="https://cdn-icons-png.flaticon.com/512/2774/2774274.png" alt="Logo UD. Ayudea"
+                            class="h-12 w-12 mr-3">
+                        <h3 class="text-xl font-bold">UD. Ayudea</h3>
+                    </div>
+                    <p class="text-primary-200 mb-4">
+                        Menyediakan produk alami berkualitas tinggi langsung dari petani lokal Indonesia sejak 2015.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-primary-200 hover:text-white transition">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-primary-200 hover:text-white transition">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-primary-200 hover:text-white transition">
+                            <i class="fab fa-tiktok"></i>
+                        </a>
+                        <a href="#" class="text-primary-200 hover:text-white transition">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Produk</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-primary-200 hover:text-white transition">Madu Murni</a></li>
+                        <li><a href="#" class="text-primary-200 hover:text-white transition">Telur Puyuh</a></li>
+                        <li><a href="#" class="text-primary-200 hover:text-white transition">Singkong Frozen</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Tautan Cepat</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#beranda" class="text-primary-200 hover:text-white transition">Beranda</a></li>
+                        <li><a href="#tentang" class="text-primary-200 hover:text-white transition">Tentang Kami</a>
+                        </li>
+                        <li><a href="#produk" class="text-primary-200 hover:text-white transition">Produk</a></li>
+                        <li><a href="#testimoni" class="text-primary-200 hover:text-white transition">Testimoni</a></li>
+                        <li><a href="#kontak" class="text-primary-200 hover:text-white transition">Kontak</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-primary-700 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-primary-200 mb-4 md:mb-0">
+                        &copy; 2025 UD. Ayudea. Semua Hak Dilindungi.
+                    </p>
+                    <div class="flex space-x-6">
+                        <a href="#" class="text-primary-200 hover:text-white transition text-sm">Syarat & Ketentuan</a>
+                        <a href="#" class="text-primary-200 hover:text-white transition text-sm">Kebijakan Privasi</a>
+                        <a href="#" class="text-primary-200 hover:text-white transition text-sm">FAQ</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp -->
+    <a href="https://wa.me/6281234567890"
+        class="fixed bottom-6 right-6 bg-green-500 hover:bg-green-600 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg transition z-50">
+        <i class="fab fa-whatsapp text-2xl"></i>
+    </a>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        // Initialize AOS animation
+        AOS.init({
+            duration: 800,
+            once: false,
+            offset: 100,
+        });
+
+        // FAQ accordion
+        document.querySelectorAll('.border button').forEach(button => {
+            button.addEventListener('click', () => {
+                const content = button.nextElementSibling;
+                const icon = button.querySelector('i');
+
+                // Toggle content
+                content.classList.toggle('hidden');
+
+                // Rotate icon
+                if (content.classList.contains('hidden')) {
+                    icon.style.transform = 'rotate(0deg)';
+                } else {
+                    icon.style.transform = 'rotate(180deg)';
+                }
+            });
+        });
+
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const closeMenuButton = document.getElementById('close-menu');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Prevent scrolling when menu is open
+        });
+
+        closeMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.remove('active');
+            document.body.style.overflow = ''; // Re-enable scrolling
+        });
+
+        // Close menu when clicking on a link
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+        });
+    </script>
+</body>
+
+</html>
